@@ -6,6 +6,8 @@
 <title>iOS Calculator</title>
 
 <link rel="stylesheet" href="style.css">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#ff9500">
 </head>
 
 <body>
@@ -48,6 +50,14 @@
 </div>
 
 <script src="script.js"></script>
+
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("sw.js");
+  });
+}
+</script>
 
 </body>
 </html>
